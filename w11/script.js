@@ -16,33 +16,29 @@ function register() {
         return;
     }
 
-    if (!email.includes("@")) {
-        alert("Invalid email");
-        return;
-    }
-
-    if (mobile.length != 10) {
-        alert("Mobile must be 10 digits");
-        return;
-    }
-
     let user = { name, email, mobile, dob, city, address, username, password };
 
-    // SIMULATED AJAX (important for exam)
-    setTimeout(function () {
+    // AJAX using XMLHttpRequest
+    let xhr = new XMLHttpRequest();
 
+    xhr.open("POST", "data.json", true);  // local file (dummy)
+
+    xhr.onload = function () {
+
+        // After "sending", store locally
         let users = JSON.parse(localStorage.getItem("users")) || [];
 
         users.push(user);
         localStorage.setItem("users", JSON.stringify(users));
 
-        alert("Registered successfully");
+        alert("Registered successfully (AJAX used)");
+    };
 
-    }, 300);
+    xhr.send(JSON.stringify(user));
 }
 
 
-// LOGIN
+// LOGIN (same as before)
 function login() {
 
     let username = document.getElementById("loginUser").value;
