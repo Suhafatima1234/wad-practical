@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PICT Mobile Site</title>
+
+    <!-- jQuery Mobile -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body style="background-color:#f0f8ff;">
+
+<!-- HOME -->
+<div data-role="page" id="home">
+
+    <div data-role="header" data-position="fixed" data-theme="b">
+        <h1>PICT</h1>
+    </div>
+
+    
+    <!-- NAVBAR -->
+    <div data-role="navbar" data-position="fixed" data-theme="b">
+       
+            <ul>
+                <li><a href="#about" class="ui-btn ui-btn-b" data-transition="slide" >About</a></li>
+                <li><a href="#courses" class="ui-btn ui-btn-b" data-transition="slide">Courses</a></li>
+                <li><a href="#dept" class="ui-btn ui-btn-b" data-transition="slide">Dept</a></li>
+                <li><a href="#contact" class="ui-btn ui-btn-b" data-transition="slide">Contact</a></li>
+            </ul>
+        
+    </div>
+    <div data-role="content">
+        <h3>Welcome to PICT</h3>
+        <p>Pune Institute of Computer Technology</p>
+    </div>
+
+
+</div>
+
+<!-- ABOUT -->
+<div data-role="page" id="about">
+
+    <div data-role="header" data-position="fixed">
+        <a href="#home" data-icon="back">Back</a>
+        <h1>About</h1>
+    </div>
+
+    <div data-role="content">
+        <p>PICT is a top engineering college.</p>
+    </div>
+
+</div>
+
+<!-- COURSES -->
+<div data-role="page" id="courses">
+
+    <div data-role="header" data-position="fixed">
+        <a href="#home" data-icon="back">Back</a>
+        <h1>Courses</h1>
+    </div>
+
+    <div data-role="content">
+
+        <div data-role="collapsible">
+            <h3>Engineering</h3>
+           
+             <ul>
+                <li>IT</li>
+                <li>CS</li>
+                <li>ENTC</li>
+            </ul>
+        </div>
+
+        <div data-role="collapsible">
+            <h3>Other Courses</h3>
+            
+            
+             <ul>
+                <li>AI</li>
+                <li>Data Science</li>
+                <li>Software Development</li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- DEPARTMENTS -->
+<div data-role="page" id="dept">
+
+    <div data-role="header" data-position="fixed">
+        <a href="#home" data-icon="back">Back</a>
+        <h1>Departments</h1>
+    </div>
+
+    <div data-role="content">
+        <ul data-role="listview" data-role="listview" data-inset="true">
+            <li>Computer</li>
+            <li>IT</li>
+            <li>ENTC</li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- CONTACT -->
+<div data-role="page" id="contact">
+
+    <div data-role="header" data-position="fixed">
+        <a href="#home" data-icon="back">Back</a>
+        <h1>Contact</h1>
+    </div>
+
+    <div data-role="content">
+        <p>Email: pict@gmail.com</p>
+        <p>Phone: 1234567890</p>
+    </div>
+    <div data-role="content">
+
+    <h3 style="text-align:center;">College Statistics</h3>
+
+    <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+
+        <div class="ui-btn ui-btn-b" style="width:120px; text-align:center;">
+            <h4>5000</h4>
+            <p>Students</p>
+        </div>
+
+        <div class="ui-btn ui-btn-b" style="width:120px; text-align:center;">
+            <h4>3</h4>
+            <p>Departments</p>
+        </div>
+
+        <div class="ui-btn ui-btn-b" style="width:120px; text-align:center;">
+            <h4>90%</h4>
+            <p>Placement</p>
+        </div>
+
+        <div class="ui-btn ui-btn-b" style="width:120px; text-align:center;">
+            <h4>200</h4>
+            <p>Faculty</p>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+</body>
+</html>

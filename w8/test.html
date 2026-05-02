@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Event Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+   
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Event Registration Form</h2>
+    <div class="row">
+     <div class="col-md-6 "><h5>Dont miss out on the events !!!</h5></div>
+    
+    <div class="col-md-6">
+        
+    <form class="needs-validation" novalidate>
+
+         <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="name" placeholder="Name" data-bs-toggle="tooltip" title="Enter Your  name" required>
+            <label for="name">Full Name</label>
+            <div class="invalid-feedback">Please Enter Your Name</div>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="email" placeholder="email" data-bs-toggle="tooltip" title="Enter Your Email" required>
+            <label for="email">Email</label>
+            <div class="invalid-feedback">Enter valid email</div>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="tel" class="form-control" id="tel" placeholder="Phone" data-bs-toggle="tooltip" title="Enter Your phone number" required>
+            <label for="tel">Phone number</label>
+            <div class="invalid-feedback">Enter phone numbers</div>
+        </div>
+
+        <div class="mb-3">
+       
+            <select class="form-select" required>
+                <option>Workshop</option>
+                <option>Seminar</option>
+                <option>Hackathon</option>
+                <option>Conference</option>
+                <option>TEDX</option>
+
+            </select>
+            
+            <div class="invalid-feedback">Please select event</div>
+        
+</div>
+
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Enter College Name" 
+            data-bs-toggle="tooltip" title="Enter Your college name" required>
+        </div>
+
+        <button class="btn btn-success w-100" type="submit">Register</button>
+            
+</form></div></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script1.js"></script>
+
+</body>
+</html>

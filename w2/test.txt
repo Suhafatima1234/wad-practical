@@ -1,0 +1,56 @@
+const products = [
+    {img:"img1.jpg", name:"Wireless Headphones", price:7999, desc:"Noise cancelling"},
+    {img:"img2.jpg", name:"Smartwatch", price:12999, desc:"Fitness tracking"},
+    {img:"img3.jpg", name:"Gaming Mouse", price:2499, desc:"Ergonomic mouse"},
+    {img:"img4.jpg", name:"Laptop Stand", price:1999, desc:"Adjustable stand"},
+    {img:"img5.jpg", name:"Keyboard", price:2999, desc:"Mechanical keyboard"},
+    {img:"img6.jpg", name:"Monitor", price:15000, desc:"Full HD display"},
+    {img:"img7.jpg", name:"Speaker", price:4999, desc:"Bluetooth speaker"},
+    {img:"img8.jpg", name:"Webcam", price:1999, desc:"HD webcam"},
+    {img:"img9.jpg", name:"Tablet", price:20000, desc:"Android tablet"},
+    {img:"img10.jpg", name:"Printer", price:8000, desc:"Inkjet printer"},
+    {img:"img11.jpg", name:"Router", price:2500, desc:"WiFi router"}
+];
+
+const rowsPerPage = 10;
+let currentPage = 1;
+
+function displayTable(page) {
+    const tableBody = document.getElementById("tableBody");
+    tableBody.innerHTML = "";
+
+    let start = (page - 1) * rowsPerPage;
+    let end = start + rowsPerPage;
+
+    let pageData = products.slice(start, end);
+
+    pageData.forEach(p => {
+        let row = `<tr>
+            <td><img src="${p.img}"></td>
+            <td>${p.name}</td>
+            <td>₹${p.price}</td>
+            <td>${p.desc}</td>
+        </tr>`;
+        tableBody.innerHTML += row;
+    });
+}
+
+function setupPagination() {
+    const pageCount = Math.ceil(products.length / rowsPerPage);
+    const paginationDiv = document.getElementById("pagination");
+
+    paginationDiv.innerHTML = "";
+
+    for (let i = 1; i <= pageCount; i++) {
+        let btn = `<button onclick="changePage(${i})">${i}</button>`;
+        paginationDiv.innerHTML += btn;
+    }
+}
+
+function changePage(page) {
+    currentPage = page;
+    displayTable(currentPage);
+}
+
+displayTable(currentPage);
+setupPagination();

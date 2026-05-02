@@ -1,0 +1,53 @@
+body{
+    font-family: Arial, sans-serif;
+    text-align: center;
+    align-items: center;
+    margin:20px;
+    border:1px solid black;
+    padding: 10px;
+
+}
+
+table{
+   width : 80%;
+     margin: auto;
+    border-collapse: collapse;
+   
+
+}
+
+th, td{
+    border:1px solid black;
+    padding: 10px;
+}
+#menuTable{
+   /* width: 80%;*/
+  
+    margin: 20px auto;
+
+    padding:50px;
+}
+
+img{
+    width:80px;
+
+}
+.card-container{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 80px;
+  
+
+}
+.card{
+    border: 1px solid black;
+    padding: 10px;
+    width: 150px;
+    border: 1px solid black;
+    border-radius:20px;
+}
+.card img{
+    width: 100px;
+
+}
