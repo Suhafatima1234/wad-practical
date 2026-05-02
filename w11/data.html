@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Registered Users</h2>
+
+    <table class="table table-bordered table-striped text-center" id="table"></table>
+</div>
+
+<script>
+let users = JSON.parse(localStorage.getItem("users")) || [];
+
+let table = `
+<tr class="table-dark">
+    <th>Name</th>
+    <th>Email</th>
+    <th>Mobile</th>
+</tr>`;
+
+users.forEach(u => {
+    table += `<tr>
+        <td>${u.name}</td>
+        <td>${u.email}</td>
+        <td>${u.mobile}</td>
+    </tr>`;
+});
+
+document.getElementById("table").innerHTML = table;
+</script>
+
+</body>
+</html>
