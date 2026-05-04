@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="todoapp">
+    <head>
+        <title>To-Do list</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    </head>
+
+    <body class="bg-light" ng-controller="todoctrl">
+        <div class="container mt-5">
+            <div class="card shadow p-4">
+                <h2 class="text-center mb-4">To-Do list</h2>
+                <div class="input-group mb-3">
+                    <input type="text" ng-model="newtask" class="form-control" placeholder="Enter Task">
+                    <button class="btn btn-primary" ng-click="addtask()">Add task</button>
+                </div>
+                <ul class="list-group">
+                    <li class="lst-group-item" ng-repeat="task in tasks track by $index">
+                        <span ng-hide="task.editing">{{task.editing}}</span>
+                        <input type="text" class="form-control me-2" ng-model="task.name" ng-show="task.editing">
+
+                        <div>
+                            <button class="btn btn-warning btn-sm me-1" ng-click="task.editing">Edit</button>
+                            <button class="btn btn-success btn-sm me-1" ng-click="updatetask(task)">Update</button>
+                            <button class="btn btn-danger btn-sm" ng-click="deletetask($ndex)"></button>
+                        </div>
+            </div>
+        </div>   
+        
+        <script>
+            var app=angular.module("todoapp",[]);
+            app.controller("todoctrl",function($scope){
+                $scope.tasks=[];
+                $scope.addtask=function(){
+                    if($scope.addtask)
+                    {
+                        $scope.tasks.push({name:$scope.newtask,editing:false});
+                        $scope.newtask="";
+                    }
+                };
+
+                $scope.deletetask=function(index)
+                {
+                    $scope.tasks.splice(index,1);
+                };
+
+                $scope.updatetask=function(task)
+                {
+                    task.editing=false;
+                };
+
+            });
+        </script>
+    </body>
+</html>  

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>user names</title>
+    </head>
+    <body>
+        <h1>User List</h1>
+        <ul id="list"></ul>
+        <script>
+            fetch("/users")
+            .then(res=>res.json())
+            .then(data=>{
+                let list = document.getElementById("list");
+
+                data.forEach(user=>{
+                    list.innerHTML+=`<li>${user.name}--${user.email}</li>`;
+                });
+            }
+            );
+        </script>
+    </body>
+
+</html> 

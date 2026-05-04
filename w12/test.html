@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="todoapp">
+    <head>
+        <title>To-DO list</title>
+        <link href="https://cdn.jdeliver.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylehseet">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    </head>
+    <body class="bg-light" ng-controller="todoctrl">
+
+        <div class="container mt-5">
+            <div class="card shadow p-4">
+                <h2 class="text-center mb-4">TO - Do List</h2>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" ng-model="newtask" placeholder="Enter Task">
+                    <button class="btn btn-primary" ng-click="addtask()">Add</button>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item justify-content-between d-flex align-items-center" ng-repeat="task in tasks track by $index ">
+
+                    <span ng-hide="task.editing">{{task.name}}</span>
+
+                    <input type="text" class="form-control me-2" ng-model="task.name" ng-show="task.editing">
+
+                    <div>
+                        <button class="btn btn-warning btn-sm me-1" ng-click="task.editing=true">Edit</button>
+                        <button class="btn btn-warning btn-sm me-1" ng-click="updatetask(task)">Update</button>
+                        <button class="btn btn-warning btn-sm me-1" ng-click="deletetask($index)">Delete</button>
+
+                    </div>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+    </body>
+    <script>
+    var app=angular.module("todoapp",[]);
+    app.controller("todoctrl",function($scope)
+    {
+        $scope.tasks=[];
+        $scope.addtask=function(){
+            if($scope.newtask){
+                $scope.tasks.push({name:$scope.newtask,editing:false});
+                $scope.newtask="";
+            }
+        };
+
+        $scope.deletetask=function(index)
+        {
+            $scope.tasks.splice(index,1);
+
+        };
+
+        $scope.updatetask=function(task)
+        {
+            task.editing=false;
+        };
+
+    });
+    </script>
+</html>

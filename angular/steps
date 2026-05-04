@@ -1,0 +1,7 @@
+npm install -g @angular/cli
+
+ng new todo-app
+cd todo-app
+ng serve
+
+http://localhost:4200
